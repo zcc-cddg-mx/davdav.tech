@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **davdav.tech** is the personal professional platform for Carlos David Duarte. The goal is not a simple portfolio — it is a long-term professional brand ecosystem positioning him as a Senior Software Engineer, Technical Lead, and emerging Solution Architect.
 
-Full requirements are documented in `plan/website-development-contract.md` and the strategic vision in `plan/website-architecture-masterplan.md`. Read both before making architectural decisions.
+Full requirements are documented in `plan/website-development-contract.md` and the strategic vision in `plan/website-architecture-masterplan.md`. Brand identity and photography requirements are in `plan/personal-brand-contract.md`. Read all three before making architectural or content decisions.
 
 ## Tech Stack
 
@@ -16,9 +16,10 @@ Full requirements are documented in `plan/website-development-contract.md` and t
 | React | 19.2.8 | UI |
 | TypeScript | 5.x | Language |
 | Tailwind CSS | 4.x | Styling |
-| `@next/mdx` | 16.3.1 | MDX support for blog |
-| `remark-gfm` | 4.x | GitHub Flavored Markdown in MDX |
-| `rehype-pretty-code` | 0.14.x | Code syntax highlighting (blog — pending Turbopack integration) |
+| `@next/mdx` | 16.3.1 | MDX config (kept minimal — no plugins, avoids Turbopack serialization issue) |
+| `next-mdx-remote/rsc` | 5.x | MDX rendering in blog — plugins passed directly to component |
+| `gray-matter` | 4.x | Frontmatter parsing for blog posts |
+| `remark-gfm` | 4.x | GitHub Flavored Markdown — passed via `MDXRemote` options, not next.config.ts |
 | Node.js (dev) | 24.13.0 | Required for build (use `nvm use 24`) |
 
 ## Commands
@@ -61,28 +62,44 @@ Dark mode is required.
 ```
 src/
   app/                        # Next.js App Router pages
-    layout.tsx                # Root layout — Inter font, metadata, dark mode
+    layout.tsx                # Root layout — Inter font, metadata, JSON-LD Person, dark mode
     page.tsx                  # Home
     about/page.tsx
     experience/page.tsx
     education/page.tsx
     certifications/page.tsx
     expertise/page.tsx
-    blog/page.tsx             # Blog listing (+ [slug]/page.tsx when built)
+    blog/page.tsx             # Blog listing with client-side category filter
+    blog/[slug]/page.tsx      # Individual post — MDXRemote + remark-gfm
     contact/page.tsx
+    sitemap.ts                # Dynamic sitemap (static routes + blog posts)
+    robots.ts                 # robots.txt
+    opengraph-image.tsx       # Global OG image 1200×630 (ImageResponse)
   components/
-    ui/                       # Primitive components (Button, Card, etc.)
+    ui/                       # Primitive components (Button, Card, BlogCard, ContactForm, etc.)
     layout/                   # Header, Footer, Nav
-    sections/                 # Page-level sections (Hero, etc.)
+    sections/                 # Page-level sections (Hero, BlogFilter, etc.)
   content/
-    blog/                     # .mdx files — one per post
-  lib/                        # Utilities (MDX helpers, metadata helpers)
+    blog/                     # .mdx files — one per post (frontmatter: title, date, category, excerpt, published)
+  lib/
+    mdx.ts                    # getAllPosts() / getPostBySlug() — gray-matter + fs
 public/
   cv/cv-carlos-duarte.pdf     # Resume for download
+cv/
+  cv-carlos-duarte.md         # CV source (Markdown) — fuente de verdad
+  cv-carlos-duarte.pdf        # CV source (PDF)
+  linkedin/
+    aptitudes.md              # LinkedIn skills snapshot
+    certifications.md         # LinkedIn certifications snapshot
 scripts/
   build.sh                    # build script (handles nvm use 24 + npm run build)
   dev.sh                      # dev server script (handles nvm use 24 + npm run dev)
-contact.php                   # PHP mailer — deployed to server root alongside /out
+contact.php                   # PHP mailer — deploy to server root alongside /out + vendor/
+plan/
+  development-plan.md         # 13-phase plan (v1.2)
+  website-development-contract.md
+  website-architecture-masterplan.md
+  personal-brand-contract.md  # Brand identity, photography requirements, email standards
 ```
 
 ## Site Architecture
@@ -99,9 +116,9 @@ Requirements per page: `plan/website-development-contract.md` §5–6.
 
 **Blog** is the primary growth engine — MDX files in `src/content/blog/`, categories: Java, Azure, DevOps, Technical Leadership, Solution Architecture.
 
-### Known Turbopack limitation
+### Turbopack + MDX — resolved
 
-`@next/mdx` remark/rehype plugins (functions) are not serializable under Turbopack. Current `next.config.ts` has MDX configured without plugins. When building the blog, plugins (`remark-gfm`, `rehype-pretty-code`) must be integrated via webpack config or a Turbopack-compatible alternative.
+`@next/mdx` remark/rehype plugins are not serializable under Turbopack. **Solution in use:** `next-mdx-remote/rsc` renders MDX as a React Server Component. Plugins (`remark-gfm`) are passed directly to the `<MDXRemote options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />` component — this runs at build time (Node.js, not Turbopack) so there is no serialization issue. `next.config.ts` keeps `createMDX({})` with no plugins.
 
 ## Performance & Quality Targets
 
@@ -135,9 +152,20 @@ Consecuencias directas:
 ### Deploy workflow
 
 ```bash
-bash scripts/build.sh   # genera /out con el sitio estático
-# subir contenido de /out via FTP al directorio público del hosting
+bash scripts/build.sh
+# 1. Subir contenido de /out via FTP al directorio público del hosting
+# 2. Subir contact.php a la raíz del servidor
+# 3. En HostGator (primera vez): composer require phpmailer/phpmailer
 ```
+
+## Current Phase Status
+
+Phases 0–10 ✅ complete. Remaining:
+- **Phase 11** — Marca Personal (photos: Corporate Headshot → Hero, Environment Portrait → About)
+- **Phase 12** — QA & Verificación (cv/linkedin vs site, cross-browser, Lighthouse ≥ 90)
+- **Phase 13** — Polish & Deploy (favicon, 404, build final, FTP)
+
+See `plan/development-plan.md` for full task breakdown.
 
 ## Future Scope — Phase 2+ (do not build now)
 
