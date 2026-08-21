@@ -175,11 +175,27 @@ Feb 2024 - Jun 2025
 
 # Certifications
 
-- IBM Cloud Essentials V3
-- Machine Learning for Data Science Projects
-- Enterprise Data Science in Practice
-- Voxy Proficiency Achievement Certificate
-- Getting Started with Data
+## 2026
+
+- Advanced Prompt Engineering Techniques — LinkedIn Learning, May 2026
+- Prompt Engineering: How to Talk to the AIs — LinkedIn Learning, May 2026
+- Machine Learning for Data Science Projects — IBM, Feb 2026
+- Diploma en Despliegue Automatizado de Infraestructura — UNIR México, Jan 2026
+
+## 2025
+
+- Enterprise Data Science in Practice — IBM, Nov 2025
+- Data Fundamentals — IBM, Sep 2025
+- Getting Started with Cybersecurity — IBM, Jul 2025
+- Diploma en Administración, Automatización y Seguridad DevOps — UNIR México, Jun 2025
+- IBM Cloud Essentials — IBM, Feb 2025
+- IBM Cloud Essentials V3 — IBM, Feb 2025
+- Journey to Cloud: Envisioning Your Solution — IBM, Feb 2025
+
+## 2024
+
+- Getting Started with Data — IBM, Oct 2024
+- Voxy Proficiency Achievement Certificate — Voxy / FrancPlus, Aug 2024
 
 ---
 

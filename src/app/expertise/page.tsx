@@ -43,6 +43,8 @@ const DOMAINS = [
       { name: "Azure", level: "advanced" },
       { name: "Azure DevOps", level: "expert" },
       { name: "CI/CD Pipelines", level: "expert" },
+      { name: "Docker", level: "intermediate" },
+      { name: "Kubernetes", level: "intermediate" },
       { name: "Cloud-Native Development", level: "advanced" },
       { name: "Infrastructure Automation", level: "advanced" },
       { name: "Cloud Migration", level: "advanced" },

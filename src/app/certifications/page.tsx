@@ -14,34 +14,85 @@ export const metadata: Metadata = {
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const EARNED = [
+  // 2026
   {
-    name: "IBM Cloud Essentials V3",
-    issuer: "IBM",
-    date: "2023",
-    category: "Cloud",
+    name: "Advanced Prompt Engineering Techniques",
+    issuer: "LinkedIn Learning",
+    date: "May 2026",
+    category: "AI",
+  },
+  {
+    name: "Prompt Engineering: How to Talk to the AIs",
+    issuer: "LinkedIn Learning",
+    date: "May 2026",
+    category: "AI",
   },
   {
     name: "Machine Learning for Data Science Projects",
     issuer: "IBM",
-    date: "2023",
+    date: "Feb 2026",
     category: "Data & AI",
   },
+  {
+    name: "Diploma en Despliegue Automatizado de Infraestructura",
+    issuer: "UNIR México",
+    date: "Jan 2026",
+    category: "DevOps",
+  },
+  // 2025
   {
     name: "Enterprise Data Science in Practice",
     issuer: "IBM",
-    date: "2023",
+    date: "Nov 2025",
     category: "Data & AI",
   },
   {
+    name: "Data Fundamentals",
+    issuer: "IBM",
+    date: "Sep 2025",
+    category: "Data & AI",
+  },
+  {
+    name: "Getting Started with Cybersecurity",
+    issuer: "IBM",
+    date: "Jul 2025",
+    category: "Security",
+  },
+  {
+    name: "Diploma en Administración, Automatización y Seguridad DevOps",
+    issuer: "UNIR México",
+    date: "Jun 2025",
+    category: "DevOps",
+  },
+  {
+    name: "IBM Cloud Essentials V3",
+    issuer: "IBM",
+    date: "Feb 2025",
+    category: "Cloud",
+  },
+  {
+    name: "IBM Cloud Essentials",
+    issuer: "IBM",
+    date: "Feb 2025",
+    category: "Cloud",
+  },
+  {
+    name: "Journey to Cloud: Envisioning Your Solution",
+    issuer: "IBM",
+    date: "Feb 2025",
+    category: "Cloud",
+  },
+  // 2024
+  {
     name: "Getting Started with Data",
     issuer: "IBM",
-    date: "2023",
+    date: "Oct 2024",
     category: "Data & AI",
   },
   {
     name: "Voxy Proficiency Achievement Certificate",
     issuer: "Voxy",
-    date: "2024",
+    date: "Aug 2024",
     category: "Language",
   },
 ];
