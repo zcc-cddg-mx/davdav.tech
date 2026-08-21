@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Experience",
   description:
     "Professional experience of Carlos David Duarte — Senior Software Engineer and Technical Lead with a track record across enterprise software, cloud, and technical leadership.",
+  alternates: { canonical: "/experience" },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Carlos David Duarte — open to engineering leadership opportunities, architecture consulting, and technical collaborations.",
+  alternates: { canonical: "/contact" },
 };
 
 const CONTACT_LINKS = [

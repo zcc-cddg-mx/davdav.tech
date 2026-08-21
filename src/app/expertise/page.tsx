@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Expertise",
   description:
     "Technical expertise of Carlos David Duarte — enterprise Java engineering, Azure cloud, DevOps, solution architecture, and technical leadership.",
+  alternates: { canonical: "/expertise" },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Certifications",
   description:
     "Professional certifications and credentials of Carlos David Duarte — IBM Cloud, Data Science, and industry programs, with Azure and Java certifications in progress.",
+  alternates: { canonical: "/certifications" },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

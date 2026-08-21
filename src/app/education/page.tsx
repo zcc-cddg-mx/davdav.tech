@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Education",
   description:
     "Academic background of Carlos David Duarte — dual Master's degrees in IT Management and DevOps, Bachelor of Engineering, and complementary studies.",
+  alternates: { canonical: "/education" },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

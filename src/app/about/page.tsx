@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Senior Software Engineer and Technical Lead focused on enterprise applications, cloud technologies, and technical leadership.",
+  alternates: { canonical: "/about" },
 };
 
 // ─── Data ────────────────────────────────────────────────────────────────────

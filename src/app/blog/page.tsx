@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Articles by Carlos David Duarte on Java, Azure, DevOps, Technical Leadership, and Solution Architecture.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function Blog() {

@@ -150,7 +150,7 @@
 
 ---
 
-## Phase 10 — SEO & Performance
+## Phase 10 — SEO & Performance ✅
 
 **Goal:** Lighthouse ≥ 90, visibilidad en buscadores.
 

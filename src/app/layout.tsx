@@ -21,14 +21,20 @@ export const metadata: Metadata = {
   keywords: [
     "Senior Software Engineer",
     "Technical Lead",
+    "Application Owner",
     "Java",
     "Spring Boot",
     "Azure",
     "DevOps",
+    "Solution Architecture",
     "Carlos David Duarte",
+    "davdav.tech",
   ],
-  authors: [{ name: "Carlos David Duarte" }],
+  authors: [{ name: "Carlos David Duarte", url: "https://davdav.tech" }],
   creator: "Carlos David Duarte",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -47,6 +53,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
   },
 };
 
@@ -62,6 +73,46 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})()`,
+          }}
+        />
+        {/* Schema.org JSON-LD — Person */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Carlos David Duarte",
+              url: "https://davdav.tech",
+              jobTitle: "Senior Software Engineer & Technical Lead",
+              description:
+                "Senior Software Engineer and Technical Lead specializing in Java, Spring Boot, Azure, DevOps, and Solution Architecture.",
+              sameAs: [
+                "https://www.linkedin.com/in/dav-gill",
+                "https://github.com/RamRider89",
+              ],
+              knowsAbout: [
+                "Java",
+                "Spring Boot",
+                "Azure",
+                "DevOps",
+                "CI/CD",
+                "Solution Architecture",
+                "Technical Leadership",
+                "Microservices",
+                "REST APIs",
+              ],
+              alumniOf: [
+                {
+                  "@type": "CollegeOrUniversity",
+                  name: "Universidad Autónoma de Chihuahua",
+                },
+              ],
+              worksFor: {
+                "@type": "Organization",
+                name: "Zurich Insurance",
+              },
+            }),
           }}
         />
       </head>
