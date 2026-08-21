@@ -12,6 +12,8 @@ export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const rawPathname = usePathname();
   const pathname = rawPathname.length > 1 ? rawPathname.replace(/\/$/, "") : rawPathname;
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
 
   return (
     <>
@@ -34,7 +36,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                    pathname === link.href
+                    isActive(link.href)
                       ? "nav-active"
                       : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--card)]"
                   }`}

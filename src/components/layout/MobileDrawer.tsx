@@ -13,6 +13,8 @@ interface MobileDrawerProps {
 export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
   const rawPathname = usePathname();
   const pathname = rawPathname.length > 1 ? rawPathname.replace(/\/$/, "") : rawPathname;
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
 
   return (
     <>
@@ -52,7 +54,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
               href={link.href}
               onClick={onClose}
               className={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
-                pathname === link.href
+                isActive(link.href)
                   ? "nav-active"
                   : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--card)]"
               }`}
