@@ -166,24 +166,44 @@
 
 ---
 
-## Phase 11 — Polish & Deploy
+## Phase 11 — Marca Personal
 
-**Goal:** Sitio production-ready subido a HostGator.
+**Goal:** Integrar identidad visual y fotografías profesionales en el sitio.
 
 | # | Task | Notes |
 |---|---|---|
-| 11.1 | Favicon + app icons | `favicon.ico`, `apple-touch-icon` |
-| 11.2 | 404 page | `not-found.tsx` con diseño de marca |
-| 11.3 | Loading states | Skeleton screens donde aplique |
-| 11.4 | Cross-browser testing | Chrome, Firefox, Safari, Edge |
-| 11.5 | Mobile QA | iOS Safari, Android Chrome |
-| 11.6 | Fotografía — Corporate Headshot | `/public/profile.webp` → Hero section (ver brand contract §7) |
-| 11.7 | Fotografía — Environment Portrait | `/public/profile-about.webp` → About page (ver brand contract §7) |
-| 11.8 | `npm run build` final | Verificar `/out` sin errores |
-| 11.9 | PHPMailer setup en HostGator | `composer require phpmailer/phpmailer` en raíz del servidor |
-| 11.10 | Primer deploy FTP | Subir `/out` + `contact.php` + `vendor/` a HostGator |
-| 11.11 | Verificación en producción | Recorrer todas las rutas en `davdav.tech` |
-| 11.12 | ⏳ Revisión CV/LinkedIn vs sitio | Contrastar `cv/cv-carlos-duarte.md` y `cv/linkedin/` con el contenido de Experience, Education, Certifications y Expertise — asegurar consistencia de fechas, roles, skills y logros |
+| 11.1 | Fotografía — Corporate Headshot | `/public/profile.webp` → Hero section (ver brand contract §7) |
+| 11.2 | Fotografía — Environment Portrait | `/public/profile-about.webp` → About page (ver brand contract §7) |
+| 11.3 | Fotografía — Lifestyle (opcional) | `/public/profile-blog.webp` → byline en posts del blog |
+
+---
+
+## Phase 12 — QA & Verificación
+
+**Goal:** Asegurar consistencia de contenido, calidad visual y rendimiento antes del deploy.
+
+| # | Task | Notes |
+|---|---|---|
+| 12.1 | ⏳ Revisión CV/LinkedIn vs sitio | Contrastar `cv/cv-carlos-duarte.md` y `cv/linkedin/` con Experience, Education, Certifications y Expertise — fechas, roles, skills, logros |
+| 12.2 | Cross-browser testing | Chrome, Firefox, Safari, Edge |
+| 12.3 | Mobile QA | iOS Safari, Android Chrome |
+| 12.4 | Auditoría Lighthouse | Performance, Accessibility, Best Practices, SEO ≥ 90 |
+| 12.5 | Loading states | Skeleton screens donde aplique |
+
+---
+
+## Phase 13 — Polish & Deploy
+
+**Goal:** Detalles finales y primer deploy a producción en HostGator.
+
+| # | Task | Notes |
+|---|---|---|
+| 13.1 | Favicon + app icons | `favicon.ico`, `apple-touch-icon` |
+| 13.2 | 404 page | `not-found.tsx` con diseño de marca |
+| 13.3 | `npm run build` final | Verificar `/out` sin errores |
+| 13.4 | PHPMailer setup en HostGator | `composer require phpmailer/phpmailer` en raíz del servidor |
+| 13.5 | Primer deploy FTP | Subir `/out` + `contact.php` + `vendor/` a HostGator |
+| 13.6 | Verificación en producción | Recorrer todas las rutas en `davdav.tech` |
 
 ---
 
@@ -215,7 +235,9 @@ Phase 1 (Layout & Nav)
 → Phase 8 (Blog)
 → Phase 9 (Contact)
 → Phase 10 (SEO)
-→ Phase 11 (Deploy)
+→ Phase 11 (Marca Personal)
+→ Phase 12 (QA & Verificación)
+→ Phase 13 (Polish & Deploy)
 ```
 
 Shared components se construyen a medida que cada fase los requiere.
