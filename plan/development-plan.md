@@ -183,6 +183,7 @@
 | 11.9 | PHPMailer setup en HostGator | `composer require phpmailer/phpmailer` en raíz del servidor |
 | 11.10 | Primer deploy FTP | Subir `/out` + `contact.php` + `vendor/` a HostGator |
 | 11.11 | Verificación en producción | Recorrer todas las rutas en `davdav.tech` |
+| 11.12 | ⏳ Revisión CV/LinkedIn vs sitio | Contrastar `cv/cv-carlos-duarte.md` y `cv/linkedin/` con el contenido de Experience, Education, Certifications y Expertise — asegurar consistencia de fechas, roles, skills y logros |
 
 ---
 
