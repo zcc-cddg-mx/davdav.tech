@@ -52,7 +52,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
               onClick={onClose}
               className={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
                 pathname === link.href
-                  ? "bg-[var(--card)] text-[var(--foreground)]"
+                  ? "text-[var(--color-primary)] bg-[var(--color-primary)]/10"
                   : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--card)]"
               }`}
             >
