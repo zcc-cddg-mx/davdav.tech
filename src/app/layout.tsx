@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -70,14 +71,20 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         {/* Anti-FOUC: apply dark class before first paint */}
-        <script
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})()`,
           }}
         />
+      </head>
+      <body className={`${inter.variable} antialiased`}>
         {/* Schema.org JSON-LD — Person */}
-        <script
+        <Script
+          id="json-ld-person"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -115,8 +122,6 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
-      <body className={`${inter.variable} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

@@ -1,12 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { Sun, Moon } from "lucide-react";
 
 export default function DarkModeToggle() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
+    // Sync icon with the class applied by the anti-FOUC script before React hydrated.
+    // setState in an effect is intentional here — reading external DOM state on mount.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDark(document.documentElement.classList.contains("dark"));
   }, []);
 

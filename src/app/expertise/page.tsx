@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Code2, Cloud, Layers, Users } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
-import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
