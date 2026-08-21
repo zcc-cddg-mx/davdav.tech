@@ -21,8 +21,6 @@ Full requirements are documented in `plan/website-development-contract.md` and t
 | `rehype-pretty-code` | 0.14.x | Code syntax highlighting (blog — pending Turbopack integration) |
 | Node.js (dev) | 24.13.0 | Required for build (use `nvm use 24`) |
 
-> Note: the `.gitignore` contains Angular-specific entries from its template origin — they are harmless but unrelated to this project's stack.
-
 ## Commands
 
 ```bash
@@ -61,6 +59,8 @@ src/
     page.tsx                  # Home
     about/page.tsx
     experience/page.tsx
+    education/page.tsx
+    certifications/page.tsx
     expertise/page.tsx
     blog/page.tsx             # Blog listing (+ [slug]/page.tsx when built)
     contact/page.tsx
@@ -78,11 +78,13 @@ contact.php                   # PHP mailer — deployed to server root alongside
 
 ## Site Architecture
 
-Pages (Phase 1):
+Pages (Phase 1 scope, per SRS §5):
 
 ```
-Home → About → Experience → Expertise → Blog → Contact → Resume (download)
+Home → About → Experience → Education → Certifications → Expertise → Blog → Contact
 ```
+
+Resume is a PDF download (`/cv/cv-carlos-duarte.pdf`), not a separate page.
 
 Requirements per page: `plan/website-development-contract.md` §5–6.
 
@@ -128,6 +130,6 @@ npm run build        # genera /out con el sitio estático
 # subir contenido de /out via FTP al directorio público del hosting
 ```
 
-## Phase 2 / Future Scope (do not build now)
+## Future Scope — Phase 2+ (do not build now)
 
 Project portfolio, case studies, newsletter, RSS feed, i18n (EN/ES), GitHub activity integration, AI assistant.
