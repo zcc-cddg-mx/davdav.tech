@@ -70,4 +70,4 @@
 
 ## Extra
 
-- Posibilidad de incluir imagenes en el modo Mobile
+- [ ] Posibilidad de incluir imágenes en modo Mobile (Hero A01, About A07 — actualmente `hidden lg:block`, pendiente para próxima sesión)
