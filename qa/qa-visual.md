@@ -71,3 +71,4 @@
 ## Extra
 
 - [ ] Posibilidad de incluir imágenes en modo Mobile (Hero A01, About A07 — actualmente `hidden lg:block`, pendiente para próxima sesión)
+- [ ] Verificación envío de emails via PHP (contact.php + PHPMailer — requiere deploy en HostGator, pendiente Phase 13)
