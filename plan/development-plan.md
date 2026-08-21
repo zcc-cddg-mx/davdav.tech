@@ -166,12 +166,13 @@
 
 ---
 
-## Phase 11 — Marca Personal
+## Phase 11 — Marca Personal ✅ (Phase 1 scope)
 
 **Goal:** Integrar identidad visual y fotografías profesionales en el sitio.
 
 Assets disponibles en `img/brand/` (8 imágenes) — desplegados a `public/brand/`.
 Ver asset mapping completo en `plan/personal-brand-contract.md §7`.
+Tasks 11.4–11.8 son Phase 2 scope (blog headers, articles, events, advisory).
 
 | # | Task | Asset | Notes |
 |---|---|---|---|
