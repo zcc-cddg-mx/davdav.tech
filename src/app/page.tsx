@@ -1,8 +1,13 @@
+import HeroSection from "@/components/sections/HeroSection";
+import HighlightsSection from "@/components/sections/HighlightsSection";
+import FeaturedBlogSection from "@/components/sections/FeaturedBlogSection";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Carlos David Duarte</h1>
-      <p>Senior Software Engineer · Technical Lead & Application Owner</p>
-    </main>
+    <>
+      <HeroSection />
+      <HighlightsSection />
+      <FeaturedBlogSection />
+    </>
   );
 }
