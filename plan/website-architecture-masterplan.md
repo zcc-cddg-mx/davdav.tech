@@ -452,3 +452,75 @@ Claude
 Signature: _______________________
 
 Date: _______________________
+
+---
+
+# Brand Narrative
+
+The complete platform must communicate the following professional journey:
+
+```text
+Software Engineer
+↓
+Technical Lead
+↓
+Application Owner
+↓
+Cloud Professional
+↓
+Solution Architect
+```
+
+---
+
+# Content-to-Image Mapping
+
+| Section | Asset | File |
+|---|---|---|
+| Home | A01 Hero Portrait | `public/brand/a01-hero.jpg` |
+| About | A03 Technical Leadership | `public/brand/a03-technical-leadership.jpg` |
+| Architecture | A02 Cloud & Architecture | `public/brand/a02-cloud-architecture.jpg` |
+| Blog | A04 Thought Leadership | `public/brand/a04-thought-leadership.jpg` |
+| Java Articles | A05 Engineering Workspace | `public/brand/a05-engineering-workspace.jpg` |
+| Leadership Content | A03 Technical Leadership | `public/brand/a03-technical-leadership.jpg` |
+| Events | A06 Conference Speaker | `public/brand/a06-conference-speaker.jpg` |
+| Advisory Services | A07 Executive Profile | `public/brand/a07-executive-profile.jpg` |
+
+---
+
+# Visual Ecosystem Strategy
+
+## Phase 1 — Current
+- Website
+- Blog
+- LinkedIn Integration
+
+## Phase 2 — Next
+- Newsletter
+- Case Studies
+- Resource Library
+
+## Phase 3 — Future
+- AI Assistant
+- Consulting Presence
+- Architecture Knowledge Hub
+
+---
+
+# Future Media Requirements
+
+All future generated images must maintain:
+- Consistent appearance and wardrobe style
+- Azure-inspired color palette
+- Corporate environments
+- Enterprise technology context
+
+---
+
+# Key Rule
+
+Every feature added to davdav.tech must strengthen the positioning of:
+
+```text
+Senior Software Engineer | Technical Lead & Application Owner | Cloud & Solution Architecture
+```

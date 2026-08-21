@@ -88,55 +88,97 @@ Carlos David Duarte is a Senior Software Engineer and Technical Lead who combine
 
 ---
 
-# 7. Personal Photography Requirements
+# 7. Professional Image Library
 
-## Objective
+A curated library of seven professional brand images is part of the official project deliverables. All assets are located in `img/brand/` and deployed to `public/brand/`.
 
-Increase trust, authenticity, credibility, and professional recognition.
+## Asset A01 — Hero Portrait
 
-## Required Photo Types
-
-### Corporate Headshot
+File: `img/brand/1.jpg` → `public/brand/a01-hero.jpg`
 
 Usage:
+- Homepage Hero
+- LinkedIn Profile
+- Resume
+- Email Signature
 
-- Homepage hero section
-- LinkedIn profile
-- Conference profiles
-- Professional biographies
+Brand Message: Software Engineering Excellence
 
-Requirements:
+## Asset A02 — Cloud & Architecture
 
-- Professional attire
-- Neutral background
-- High resolution
-- Modern appearance
-
-### Professional Environment Portrait
+File: `img/brand/2.jpg` → `public/brand/a02-cloud-architecture.jpg`
 
 Usage:
+- Architecture Page
+- Cloud Articles
+- Speaking Profile
 
-- About page
-- Press kit
-- Speaker profile
+Brand Message: Solution Architecture and Enterprise Systems
 
-Examples:
+## Asset A03 — Technical Leadership
 
-- Office environment
-- Technology workspace
-- Conference venue
-
-### Optional Lifestyle Professional Photo
+File: `img/brand/3.jpg` → `public/brand/a03-technical-leadership.jpg`
 
 Usage:
+- About Page
+- Leadership Content
+- Consulting Sections
 
-- Blog profile
-- Personal branding assets
+Brand Message: Technical Leadership and Stakeholder Alignment
 
-Requirements:
+## Asset A04 — Thought Leadership Portrait
 
-- Natural and authentic
-- Technology-oriented setting
+File: `img/brand/6.jpg` → `public/brand/a04-thought-leadership.jpg`
+
+Usage:
+- Blog Headers
+- Newsletter
+- Publications
+
+## Asset A05 — Engineering Workspace
+
+File: `img/brand/4.jpg` → `public/brand/a05-engineering-workspace.jpg`
+
+Usage:
+- Java and Engineering Articles
+- GitHub Showcase
+
+## Asset A06 — Conference Speaker
+
+File: `img/brand/5.jpg` → `public/brand/a06-conference-speaker.jpg`
+
+Usage:
+- Community Events
+- Speaker Profile
+
+## Asset A07 — Executive Profile
+
+File: `img/brand/7.jpg` → `public/brand/a07-executive-profile.jpg`
+
+Usage:
+- Executive Biography
+- Future Advisory Services
+
+## Additional: Profile Photo
+
+File: `img/brand/0.png` → `public/brand/profile-square.png`
+
+Usage:
+- Profile avatar contexts
+- Blog post byline
+- Backup square crop for A01 contexts
+
+---
+
+### Personal Brand Consistency Rule
+
+No page, image, article, or feature shall position the owner solely as a Java Developer.
+
+All assets must reinforce the progression:
+
+```text
+Software Engineer → Technical Lead → Application Owner → Cloud Professional → Solution Architect
+```
 
 ---
 
@@ -154,6 +196,7 @@ Requirements:
 
 - Azure Blue (#0078D4)
 - Dark Slate (#0F172A)
+- Accent Blue (#38BDF8)
 - White (#FFFFFF)
 - Light Gray (#E2E8F0)
 

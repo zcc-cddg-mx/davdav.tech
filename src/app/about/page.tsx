@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Target, Lightbulb, TrendingUp } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
@@ -93,34 +94,51 @@ export default function About() {
       {/* ── Hero ── */}
       <section className="py-16 sm:py-20 border-b border-[var(--border)]">
         <Container>
-          <div className="max-w-3xl">
-            <p className="text-sm font-medium text-[var(--color-primary)] tracking-wide uppercase mb-4">
-              About
-            </p>
-            <h1 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight mb-6">
-              Engineering at the intersection of technology and business
-            </h1>
-            <div className="space-y-4 text-base text-[var(--muted)] leading-relaxed">
-              <p>
-                I&apos;m a Senior Software Engineer and Technical Lead focused on
-                engineering, modernizing, and owning enterprise applications
-                where technology and business objectives converge.
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: text content */}
+            <div>
+              <p className="text-sm font-medium text-[var(--color-primary)] tracking-wide uppercase mb-4">
+                About
               </p>
-              <p>
-                Throughout my career, I&apos;ve taken end-to-end responsibility for
-                business-critical systems — from understanding requirements and
-                translating them into resilient technical solutions, to managing
-                technical debt, coordinating deployments, and aligning with
-                security and compliance standards.
-              </p>
-              <p>
-                My technical expertise is centered on Java, Spring Boot, Azure,
-                and DevOps. I excel in cloud-native architectures, CI/CD
-                optimization, legacy modernization, and operational workflows.
-                I hold dual Master&apos;s degrees in IT Management and DevOps, which
-                complement my hands-on engineering background with a broader,
-                strategic perspective on enterprise delivery.
-              </p>
+              <h1 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight mb-6">
+                Engineering at the intersection of technology and business
+              </h1>
+              <div className="space-y-4 text-base text-[var(--muted)] leading-relaxed">
+                <p>
+                  I&apos;m a Senior Software Engineer and Technical Lead focused on
+                  engineering, modernizing, and owning enterprise applications
+                  where technology and business objectives converge.
+                </p>
+                <p>
+                  Throughout my career, I&apos;ve taken end-to-end responsibility for
+                  business-critical systems — from understanding requirements and
+                  translating them into resilient technical solutions, to managing
+                  technical debt, coordinating deployments, and aligning with
+                  security and compliance standards.
+                </p>
+                <p>
+                  My technical expertise is centered on Java, Spring Boot, Azure,
+                  and DevOps. I excel in cloud-native architectures, CI/CD
+                  optimization, legacy modernization, and operational workflows.
+                  I hold dual Master&apos;s degrees in IT Management and DevOps, which
+                  complement my hands-on engineering background with a broader,
+                  strategic perspective on enterprise delivery.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: technical leadership image (A03) */}
+            <div className="hidden lg:block">
+              <div className="relative w-full aspect-square max-w-md mx-auto">
+                <Image
+                  src="/brand/a03-technical-leadership.jpg"
+                  alt="Carlos David Duarte — Technical Leadership"
+                  fill
+                  sizes="(max-width: 1280px) 384px, 448px"
+                  className="rounded-2xl object-cover object-center"
+                />
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-[var(--color-primary)] ring-opacity-30 pointer-events-none" />
+              </div>
             </div>
           </div>
         </Container>

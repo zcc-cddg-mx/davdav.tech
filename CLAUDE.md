@@ -85,6 +85,18 @@ src/
     mdx.ts                    # getAllPosts() / getPostBySlug() — gray-matter + fs
 public/
   cv/cv-carlos-duarte.pdf     # Resume for download
+  brand/                      # Brand image library (A01–A07) — Phase 11
+    a01-hero.jpg              # Hero Portrait → Homepage Hero, LinkedIn, Resume
+    a02-cloud-architecture.jpg # Cloud & Architecture → Architecture page
+    a03-technical-leadership.jpg # Technical Leadership → About page
+    a04-thought-leadership.jpg # Thought Leadership Portrait → Blog headers
+    a05-engineering-workspace.jpg # Engineering Workspace → Java articles
+    a06-conference-speaker.jpg # Conference Speaker → Events
+    a07-executive-profile.jpg # Executive Profile → Advisory services
+    profile-square.png        # Square profile photo (neutral gray background)
+img/
+  brand/                      # Source images (originals) — do not serve directly
+  profile/                    # Source profile photos (400×400, 800×800)
 cv/
   cv-carlos-duarte.md         # CV source (Markdown) — fuente de verdad
   cv-carlos-duarte.pdf        # CV source (PDF)
@@ -160,10 +172,12 @@ bash scripts/build.sh
 
 ## Current Phase Status
 
-Phases 0–10 ✅ complete. Remaining:
-- **Phase 11** — Marca Personal (photos: Corporate Headshot → Hero, Environment Portrait → About)
+Phases 0–10 ✅ complete. Phase 11 in progress:
+- **Phase 11** — Marca Personal ⏳ — images copied to `public/brand/`, A01 integrated in Hero, A03 integrated in About. Tasks 11.4–11.8 are Phase 2 scope.
 - **Phase 12** — QA & Verificación (cv/linkedin vs site, cross-browser, Lighthouse ≥ 90)
 - **Phase 13** — Polish & Deploy (favicon, 404, build final, FTP)
+
+Brand images: `public/brand/a01-hero.jpg` through `a07-executive-profile.jpg`. Source originals in `img/brand/` (do not serve directly).
 
 See `plan/development-plan.md` for full task breakdown.
 

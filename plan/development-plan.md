@@ -170,11 +170,19 @@
 
 **Goal:** Integrar identidad visual y fotografías profesionales en el sitio.
 
-| # | Task | Notes |
-|---|---|---|
-| 11.1 | Fotografía — Corporate Headshot | `/public/profile.webp` → Hero section (ver brand contract §7) |
-| 11.2 | Fotografía — Environment Portrait | `/public/profile-about.webp` → About page (ver brand contract §7) |
-| 11.3 | Fotografía — Lifestyle (opcional) | `/public/profile-blog.webp` → byline en posts del blog |
+Assets disponibles en `img/brand/` (8 imágenes) — desplegados a `public/brand/`.
+Ver asset mapping completo en `plan/personal-brand-contract.md §7`.
+
+| # | Task | Asset | Notes |
+|---|---|---|---|
+| 11.1 | ✅ Copiar imágenes a `public/brand/` | A01–A07 + profile-square | `public/brand/a01-hero.jpg` … `a07-executive-profile.jpg` |
+| 11.2 | ✅ Hero section — A01 | `public/brand/a01-hero.jpg` | 2-col layout, imagen a la derecha (desktop) |
+| 11.3 | ✅ About page — A03 | `public/brand/a03-technical-leadership.jpg` | 2-col layout, imagen a la derecha (desktop) |
+| 11.4 | Blog headers — A04 | `public/brand/a04-thought-leadership.jpg` | Phase 2 — blog header image |
+| 11.5 | Engineering articles — A05 | `public/brand/a05-engineering-workspace.jpg` | Phase 2 — Java/engineering articles |
+| 11.6 | Conference / Speaker — A06 | `public/brand/a06-conference-speaker.jpg` | Phase 2 — events section |
+| 11.7 | Cloud & Architecture — A02 | `public/brand/a02-cloud-architecture.jpg` | Phase 2 — architecture/cloud articles |
+| 11.8 | Executive Profile — A07 | `public/brand/a07-executive-profile.jpg` | Phase 2 — advisory/executive bio |
 
 ---
 
