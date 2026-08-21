@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const FEATURED = [
   {
     company: "Zurich Insurance",
-    location: "Mexico",
+    location: "Remote · Mexico",
     current: true,
     roles: [
       {
