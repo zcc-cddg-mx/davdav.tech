@@ -23,14 +23,20 @@ Full requirements are documented in `plan/website-development-contract.md` and t
 
 ## Commands
 
+Use the scripts in `scripts/` — they handle `nvm use 24` automatically:
+
 ```bash
-nvm use 24          # required — project uses Node 24
-npm run dev         # development server (Turbopack)
-npm run build       # static export → /out
-npm run lint        # ESLint
+bash scripts/build.sh   # production build → /out (static export)
+bash scripts/dev.sh     # development server (Turbopack, http://localhost:3000)
 ```
 
-After `npm run build`, the `/out` directory contains the full static site ready to upload via FTP.
+For one-off commands that require Node 24:
+
+```bash
+source ~/.nvm/nvm.sh && nvm use 24 && npm run lint
+```
+
+After `bash scripts/build.sh`, the `/out` directory contains the full static site ready to upload via FTP.
 
 ## Design System
 
@@ -73,6 +79,9 @@ src/
   lib/                        # Utilities (MDX helpers, metadata helpers)
 public/
   cv/cv-carlos-duarte.pdf     # Resume for download
+scripts/
+  build.sh                    # build script (handles nvm use 24 + npm run build)
+  dev.sh                      # dev server script (handles nvm use 24 + npm run dev)
 contact.php                   # PHP mailer — deployed to server root alongside /out
 ```
 
@@ -126,7 +135,7 @@ Consecuencias directas:
 ### Deploy workflow
 
 ```bash
-npm run build        # genera /out con el sitio estático
+bash scripts/build.sh   # genera /out con el sitio estático
 # subir contenido de /out via FTP al directorio público del hosting
 ```
 
