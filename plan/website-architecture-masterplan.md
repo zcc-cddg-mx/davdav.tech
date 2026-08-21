@@ -271,7 +271,7 @@ Frequency:
 Primary:
 
 ```text
-carlos@davdav.tech
+david.duarte@davdav.tech
 ```
 
 Recommended Alias:

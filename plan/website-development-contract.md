@@ -248,7 +248,7 @@ Serve as the primary content and thought leadership platform.
 
 ## Primary Email
 
-carlos@davdav.tech
+david.duarte@davdav.tech
 
 ## Optional Aliases
 

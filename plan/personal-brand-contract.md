@@ -205,7 +205,7 @@ Serve as the central digital hub.
 
 Preferred:
 
-- carlos@davdav.tech
+- david.duarte@davdav.tech
 
 Secondary:
 

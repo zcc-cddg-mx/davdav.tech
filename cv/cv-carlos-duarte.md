@@ -6,7 +6,7 @@
 
 ## Contact
 
-- Email: david.duarte.gill@gmail.com
+- Email: david.duarte@davdav.tech
 - LinkedIn: https://www.linkedin.com/in/dav-gill
 - GitHub: https://github.com/RamRider89
 
@@ -30,9 +30,17 @@ Currently, I'm expanding my focus toward Solution and Cloud Architecture roles w
 
 # Core Skills
 
-- Java
-- Spring Boot
-- Azure DevOps
+## Engineering Excellence
+- Java · Spring Boot · REST APIs · Microservices · Enterprise Applications
+
+## Cloud & DevOps
+- Azure · Azure DevOps · CI/CD · Docker · Kubernetes · Cloud-Native Development
+
+## Technical Leadership
+- Team Leadership · Mentoring · Stakeholder Management · Application Ownership
+
+## Architecture
+- Solution Architecture · System Design · Application Modernization · Enterprise Systems
 
 ---
 
