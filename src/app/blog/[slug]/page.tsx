@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import Container from "@/components/ui/Container";
@@ -76,9 +77,30 @@ export default async function BlogPost({
             <h1 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight mb-6">
               {post.title}
             </h1>
-            <p className="text-base text-[var(--muted)] leading-relaxed">
+            <p className="text-base text-[var(--muted)] leading-relaxed mb-8">
               {post.excerpt}
             </p>
+
+            {/* Author byline */}
+            <div className="flex items-center gap-3 pt-6 border-t border-[var(--border)]">
+              <div className="relative w-10 h-10 shrink-0">
+                <Image
+                  src="/brand/profile-square.png"
+                  alt="Carlos David Duarte"
+                  fill
+                  sizes="40px"
+                  className="rounded-full object-cover object-center"
+                />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-[var(--foreground)] leading-tight">
+                  Carlos David Duarte
+                </p>
+                <p className="text-xs text-[var(--muted)] mt-0.5">
+                  Senior Software Engineer · Technical Lead
+                </p>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
