@@ -1,8 +1,9 @@
 # Development Plan — davdav.tech
 
-**Version:** 1.1  
+**Version:** 1.2  
 **Stack:** Next.js 16 · React 19 · TypeScript 5 · Tailwind CSS 4 · MDX  
 **Deployment:** Static export → FTP → HostGator  
+**Brand:** Ver `plan/personal-brand-contract.md` — email canónico: `david.duarte@davdav.tech`  
 
 ---
 
@@ -176,9 +177,12 @@
 | 11.3 | Loading states | Skeleton screens donde aplique |
 | 11.4 | Cross-browser testing | Chrome, Firefox, Safari, Edge |
 | 11.5 | Mobile QA | iOS Safari, Android Chrome |
-| 11.6 | `npm run build` final | Verificar `/out` sin errores |
-| 11.7 | Primer deploy FTP | Subir `/out` + `contact.php` a HostGator |
-| 11.8 | Verificación en producción | Recorrer todas las rutas en `davdav.tech` |
+| 11.6 | Fotografía — Corporate Headshot | `/public/profile.webp` → Hero section (ver brand contract §7) |
+| 11.7 | Fotografía — Environment Portrait | `/public/profile-about.webp` → About page (ver brand contract §7) |
+| 11.8 | `npm run build` final | Verificar `/out` sin errores |
+| 11.9 | PHPMailer setup en HostGator | `composer require phpmailer/phpmailer` en raíz del servidor |
+| 11.10 | Primer deploy FTP | Subir `/out` + `contact.php` + `vendor/` a HostGator |
+| 11.11 | Verificación en producción | Recorrer todas las rutas en `davdav.tech` |
 
 ---
 
