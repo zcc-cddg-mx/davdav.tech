@@ -193,7 +193,7 @@ Tasks 11.4–11.8 son Phase 2 scope (blog headers, articles, events, advisory).
 
 | # | Task | Notes |
 |---|---|---|
-| 12.1 | ⏳ Revisión CV/LinkedIn vs sitio | Contrastar `cv/cv-carlos-duarte.md` y `cv/linkedin/` con Experience, Education, Certifications y Expertise — fechas, roles, skills, logros |
+| 12.1 | ✅ Revisión CV/LinkedIn vs sitio | Certifications: 5→13 certs, fechas corregidas, categorías AI/DevOps/Security añadidas. Expertise: Docker+Kubernetes añadidos. CV actualizado con 13 certs por año. Sierra Metals Inc. = "Alpayana" en LinkedIn — conservar nombre CV. |
 | 12.2 | Cross-browser testing | Chrome, Firefox, Safari, Edge |
 | 12.3 | Mobile QA | iOS Safari, Android Chrome |
 | 12.4 | Auditoría Lighthouse | Performance, Accessibility, Best Practices, SEO ≥ 90 |
