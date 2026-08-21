@@ -47,9 +47,29 @@ const DEGREES = [
       "Foundational engineering education providing analytical thinking, systems design, and problem-solving frameworks applied throughout my software career.",
     tags: ["Systems Design", "Engineering Fundamentals", "Problem Solving"],
   },
+  {
+    institution: "Instituto Tecnológico de Chihuahua II",
+    degree: "Engineer's Degree",
+    field: "Systems Engineering",
+    period: "2008 – 2010",
+    location: "Chihuahua, Mexico",
+    inProgress: false,
+    notes:
+      "Systems engineering studies with focus on programming, databases, and the Java Virtual Machine. Provided the technical foundation that launched a career in software development.",
+    tags: ["Systems Engineering", "Java", "Databases"],
+  },
 ];
 
 const OTHER = [
+  {
+    institution: "Centro de Bachillerato Industrial y de Servicios No. 122 (CBTis 122)",
+    degree: "High School Diploma",
+    field: "Técnico en Sistemas Computacionales",
+    period: "2004 – 2007",
+    inProgress: false,
+    notes: "Technical high school specializing in computing systems — early introduction to programming, databases, and systems development.",
+    tags: ["Computing Systems", "Programming", "Databases"],
+  },
   {
     institution: "Linguatec Language Center",
     degree: "Language Program",
@@ -57,6 +77,13 @@ const OTHER = [
     period: "Feb 2024 – Jun 2025",
     inProgress: false,
     notes: "Professional working proficiency in English for technical and business communication.",
+  },
+  {
+    institution: "Universidad Autónoma de Chihuahua",
+    degree: "Diploma",
+    field: "English Language Program · Facultad de Filosofía y Letras",
+    period: "2013 – 2014",
+    inProgress: false,
   },
   {
     institution: "Secretaría de Educación, Cultura y Deporte",
@@ -99,9 +126,9 @@ export default function Education() {
             title="Academic Degrees"
             subtitle="Formal university education spanning engineering, technology management, and DevOps."
           />
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {DEGREES.map((d) => (
-              <EducationCard key={d.institution} {...d} />
+              <EducationCard key={`${d.institution}-${d.period}`} {...d} />
             ))}
           </div>
         </Container>
