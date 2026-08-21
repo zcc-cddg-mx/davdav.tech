@@ -11,7 +11,8 @@ interface MobileDrawerProps {
 }
 
 export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  const pathname = rawPathname.length > 1 ? rawPathname.replace(/\/$/, "") : rawPathname;
 
   return (
     <>

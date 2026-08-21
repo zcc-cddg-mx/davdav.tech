@@ -10,7 +10,8 @@ import { NAV_LINKS } from "./nav-links";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  const pathname = rawPathname.length > 1 ? rawPathname.replace(/\/$/, "") : rawPathname;
 
   return (
     <>
