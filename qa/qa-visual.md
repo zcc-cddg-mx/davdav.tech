@@ -7,7 +7,7 @@
 - [x] Todos los nav links funcionan (About, Experience, Education, Certifications, Expertise, Blog, Contact)
     - añadir un estilo para marcar visualmente la seccion activa
 - [x] Botón dark## light mode cambia tema correctamente
-    - añadir un estilo :hover para el boton y que el cursos cambie a tipo link|hand
+    - añadir un estilo :hover para el boton y que el cursos cambie a tipo link|hand | done
 - [x] Footer: LinkedIn, GitHub, email visibles
 
 ## — Home
@@ -21,7 +21,7 @@
 ## about — About
 
 - [x] Layout 2 columnas en desktop: texto izquierda, foto A03 (team meeting) derecha
-    - cambiar la imagen a la A07 (necesito mejorar la A03, se ve un poco falsa por IA)
+    - cambiar la imagen a la A07 (necesito mejorar la A03, se ve un poco falsa por IA) | done
 - [x] Leadership Philosophy (3 tarjetas)
 - [x] Technical Expertise grid (4 dominios con skills)
 - [x] Career timeline (Zurich → Coppel → Entrepreneur → Sierra Meta
@@ -34,36 +34,40 @@
 
 
 ## Education — Education
-- Las dos master degree fueron terminadas en marzo del 2026, actualemte tramitando el titulo oficial
-- creo que hay mas educacion que podemos añadir aqui ?
+- Las dos master degree fueron terminadas en marzo del 2026, actualemte tramitando el titulo oficial | done
+- creo que hay mas educacion que podemos añadir aqui ? | done
 
 ## certifications — Certifications
 
 - [x] 13 certificaciones (no 5 — verificar que aparezcan todas)
-    - podriamos agregar las url's publicas de las ceritificaciones terminadas para mayor credibilidad
+    - podriamos agregar las url's publicas de las ceritificaciones terminadas para mayor credibilidad   | done
 - [x] Fechas correctas (más reciente: May 2026, no "2023")
 - [x] Categorías: Cloud, DevOps, Data & AI, Security, AI, Language
 - [x] Roadmap: AZ-900, AZ-204, AZ-305, Oracle Java
 
 ## expertise — Expertise
 
-- [ ] Cloud & DevOps incluye Docker y Kubernetes (intermediate)
-- [ ] Leyenda Expert ##  Advanced ##  Intermediate visible
-- [ ] Architecture Trajectory: Now → Active → Target
+- [x] Cloud & DevOps incluye Docker y Kubernetes (intermediate)
+- [x] Leyenda Expert / Advanced / Intermediate visible
+- [x] Architecture Trajectory: Now → Active → Target
 
 ## blog — Blog listing
 
-- [ ] Posts listados con categoría, fecha, excerpt
-- [ ] Filtro de categorías funciona
+- [x] Posts listados con categoría, fecha, excerpt
+- [x] Filtro de categorías funciona (client-side, 5 categorías + All)
 
 ## blog — Post individual
 
-- [ ] Avatar circular de autor en el header del post (foto gris neu
-- [ ] Nombre "Carlos David Duarte" y rol debajo del avatar
-- [ ] Botón "← Back to Blog" al final
+- [x] Avatar circular de autor en el header del post
+- [x] Nombre "Carlos David Duarte" y rol debajo del avatar
+- [x] Botón "← Back to Blog" al final
 
 ## contact — Contact
 
-- [ ] Formulario con campos: Name, Email, Company, Message
-- [ ] Info directa: email y LinkedIn visibles
-- [ ] Badge de disponibilidad (punto verde pulsante)
+- [x] Formulario con campos: Name, Email, Company, Message
+- [x] Info directa: email y LinkedIn visibles
+- [x] Badge de disponibilidad (punto verde pulsante, animate-pulse)
+
+## Extra
+
+- Posibilidad de incluir imagenes en el modo Mobile
