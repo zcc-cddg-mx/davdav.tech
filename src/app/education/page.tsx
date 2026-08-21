@@ -20,9 +20,9 @@ const DEGREES = [
     field: "Information Technology (IT) Management",
     period: "Sep 2024 – Mar 2026",
     location: "Mexico",
-    inProgress: true,
+    inProgress: false,
     notes:
-      "Focused on IT strategy, enterprise governance, and the management of technology-driven organizations. Complements hands-on engineering with a broader executive and organizational perspective.",
+      "Focused on IT strategy, enterprise governance, and the management of technology-driven organizations. Complements hands-on engineering with a broader executive and organizational perspective. Degree in official processing.",
     tags: ["IT Strategy", "Enterprise Governance", "Technology Management", "Digital Transformation"],
   },
   {
@@ -31,9 +31,9 @@ const DEGREES = [
     field: "Software Development and Operations (DevOps)",
     period: "Jun 2024 – Mar 2026",
     location: "Mexico",
-    inProgress: true,
+    inProgress: false,
     notes:
-      "Deepening expertise in DevOps culture, CI/CD pipelines, cloud infrastructure, and software delivery optimization at enterprise scale.",
+      "Deepening expertise in DevOps culture, CI/CD pipelines, cloud infrastructure, and software delivery optimization at enterprise scale. Degree in official processing.",
     tags: ["DevOps", "CI/CD", "Cloud Infrastructure", "Software Delivery", "Agile"],
   },
   {
@@ -83,9 +83,10 @@ export default function Education() {
               Academic foundation for engineering and leadership
             </h1>
             <p className="text-base text-[var(--muted)] leading-relaxed">
-              Dual Master&apos;s degrees in IT Management and DevOps — currently in
-              progress — complement a Bachelor&apos;s in Engineering and 15+ years of
-              hands-on practice. Theory and experience reinforce each other.
+              Dual Master&apos;s degrees in IT Management and DevOps — completed
+              March 2026, official degrees in processing — complement a
+              Bachelor&apos;s in Engineering and 15+ years of hands-on practice.
+              Theory and experience reinforce each other.
             </p>
           </div>
         </Container>

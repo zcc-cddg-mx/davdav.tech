@@ -23,7 +23,7 @@ export default function DarkModeToggle() {
     <button
       onClick={toggle}
       aria-label="Toggle dark mode"
-      className="p-2 rounded-md text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--card)] transition-colors"
+      className="p-2 rounded-md text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--card)] transition-colors cursor-pointer"
     >
       {dark ? <Sun size={18} /> : <Moon size={18} />}
     </button>

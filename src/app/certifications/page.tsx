@@ -20,24 +20,28 @@ const EARNED = [
     issuer: "LinkedIn Learning",
     date: "May 2026",
     category: "AI",
+    credentialUrl: "https://www.linkedin.com/learning/certificates/3655889578ce476f3d1dcee8276ad5cdb268e92d8ba5dd099024c46bf8fe6826/",
   },
   {
     name: "Prompt Engineering: How to Talk to the AIs",
     issuer: "LinkedIn Learning",
     date: "May 2026",
     category: "AI",
+    credentialUrl: "https://www.linkedin.com/learning/certificates/fd421c820edd2a6406ead5b18673c9def0757947a83d23dbdd1c7e082e4e3c4d/",
   },
   {
     name: "Machine Learning for Data Science Projects",
     issuer: "IBM",
     date: "Feb 2026",
     category: "Data & AI",
+    credentialUrl: "https://www.credly.com/badges/a98ec2dc-0a6b-44fb-998e-b37cdf5cc5fa/public_url",
   },
   {
     name: "Diploma en Despliegue Automatizado de Infraestructura",
     issuer: "UNIR México",
     date: "Jan 2026",
     category: "DevOps",
+    credentialUrl: "https://verifirma.unir.net/MX/CSV/a5ed6765-f13c-4957-87f9-4a0aad4a2199",
   },
   // 2025
   {
@@ -45,42 +49,49 @@ const EARNED = [
     issuer: "IBM",
     date: "Nov 2025",
     category: "Data & AI",
+    credentialUrl: "https://www.credly.com/badges/b06001a6-678c-41ed-ab6f-833eb24546f0/public_url",
   },
   {
     name: "Data Fundamentals",
     issuer: "IBM",
     date: "Sep 2025",
     category: "Data & AI",
+    credentialUrl: "https://www.credly.com/badges/13619bf2-c5a8-4089-b540-e568c05caaee/public_url",
   },
   {
     name: "Getting Started with Cybersecurity",
     issuer: "IBM",
     date: "Jul 2025",
     category: "Security",
+    credentialUrl: "https://www.credly.com/badges/bd37eb23-aa09-46ca-a696-c7af93517f9f/public_url",
   },
   {
     name: "Diploma en Administración, Automatización y Seguridad DevOps",
     issuer: "UNIR México",
     date: "Jun 2025",
     category: "DevOps",
+    credentialUrl: "https://verifirma.unir.net/MX/CSV/afb32927-c9d0-49d2-9d91-eb574b0bbb95",
   },
   {
     name: "IBM Cloud Essentials V3",
     issuer: "IBM",
     date: "Feb 2025",
     category: "Cloud",
+    credentialUrl: "https://courses.cognitiveclass.ai/certificates/9a80b812a3694360952f9c407e40b817",
   },
   {
     name: "IBM Cloud Essentials",
     issuer: "IBM",
     date: "Feb 2025",
     category: "Cloud",
+    credentialUrl: "https://www.credly.com/badges/9beab377-4f8b-4d27-a925-04553445d2f7/public_url",
   },
   {
     name: "Journey to Cloud: Envisioning Your Solution",
     issuer: "IBM",
     date: "Feb 2025",
     category: "Cloud",
+    credentialUrl: "https://www.credly.com/badges/1e08d535-dcb6-449f-b49e-5cbe35f69ca1",
   },
   // 2024
   {
@@ -88,12 +99,14 @@ const EARNED = [
     issuer: "IBM",
     date: "Oct 2024",
     category: "Data & AI",
+    credentialUrl: "https://www.credly.com/badges/e538bdde-1531-40e7-87cd-6943223774d2/linked_in_profile",
   },
   {
     name: "Voxy Proficiency Achievement Certificate",
     issuer: "Voxy",
     date: "Aug 2024",
     category: "Language",
+    credentialUrl: "https://francplus.linguatec.com.mx/certificates/proficiency-test/66cf62b377817c62590ccbfe",
   },
 ];
 

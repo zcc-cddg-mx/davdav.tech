@@ -127,12 +127,12 @@ export default function About() {
               </div>
             </div>
 
-            {/* Right: technical leadership image (A03) */}
+            {/* Right: executive profile image (A07) */}
             <div className="hidden lg:block">
               <div className="relative w-full aspect-square max-w-md mx-auto">
                 <Image
-                  src="/brand/a03-technical-leadership.jpg"
-                  alt="Carlos David Duarte — Technical Leadership"
+                  src="/brand/a07-executive-profile.jpg"
+                  alt="Carlos David Duarte — Executive Profile"
                   fill
                   sizes="(max-width: 1280px) 384px, 448px"
                   className="rounded-2xl object-cover object-center"

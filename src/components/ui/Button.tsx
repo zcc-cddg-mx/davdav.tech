@@ -49,14 +49,21 @@ export default function Button({
   const classes = `${base} ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
+    if (external) {
+      return (
+        <a
+          href={href}
+          className={classes}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={ariaLabel}
+        >
+          {children}
+        </a>
+      );
+    }
     return (
-      <Link
-        href={href}
-        className={classes}
-        target={external ? "_blank" : undefined}
-        rel={external ? "noopener noreferrer" : undefined}
-        aria-label={ariaLabel}
-      >
+      <Link href={href} className={classes} aria-label={ariaLabel}>
         {children}
       </Link>
     );

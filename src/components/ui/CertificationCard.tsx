@@ -4,6 +4,7 @@ interface CertificationCardProps {
   date?: string;
   category: string;
   pending?: boolean;
+  credentialUrl?: string;
 }
 
 export default function CertificationCard({
@@ -12,6 +13,7 @@ export default function CertificationCard({
   date,
   category,
   pending = false,
+  credentialUrl,
 }: CertificationCardProps) {
   return (
     <div className={`rounded-lg border bg-[var(--card)] p-5 flex flex-col gap-3 ${pending ? "border-dashed border-[var(--border)] opacity-70" : "border-[var(--border)]"}`}>
@@ -29,10 +31,22 @@ export default function CertificationCard({
           )
         )}
       </div>
-      <h3 className="text-sm font-semibold text-[var(--foreground)] leading-snug">
+      <h3 className="text-sm font-semibold text-[var(--foreground)] leading-snug flex-1">
         {name}
       </h3>
-      <p className="text-xs text-[var(--muted)]">{issuer}</p>
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs text-[var(--muted)]">{issuer}</p>
+        {credentialUrl && (
+          <a
+            href={credentialUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 text-xs font-medium text-[var(--color-primary)] hover:underline"
+          >
+            Verify →
+          </a>
+        )}
+      </div>
     </div>
   );
 }
