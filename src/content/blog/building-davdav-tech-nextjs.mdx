@@ -1,0 +1,61 @@
+---
+title: "Building davdav.tech: Engineering a Professional Brand with Next.js"
+date: "2026-08-20"
+category: "Solution Architecture"
+excerpt: "How I approached building a professional brand platform from the ground up — technology choices, architecture decisions, and the thinking behind a site that grows with your career."
+published: true
+---
+
+A professional website used to mean a static page with a photo and a list of jobs. That's not enough anymore — especially if you're positioning yourself as a Senior Software Engineer moving toward Solution Architecture.
+
+This post covers the thinking behind davdav.tech: the goals I set, the technology decisions I made, and why some "obvious" choices were deliberately skipped.
+
+## The goal: a brand ecosystem, not a portfolio
+
+The difference matters. A portfolio is a snapshot. A brand ecosystem is a system that compounds over time — more content means more discoverability, deeper articles build authority, consistent positioning reinforces the narrative.
+
+The core components:
+- **Static pages**: Who I am, what I've done, what I know
+- **Blog**: The growth engine — original writing on Java, Azure, DevOps, architecture
+- **Resume download**: The offline artifact that travels to recruiters and hiring managers
+
+## Technology decisions
+
+### Next.js with static export
+
+The site is hosted on HostGator shared hosting — no Node.js runtime. That means the site has to be fully static HTML/CSS/JS, deployed via FTP.
+
+Next.js with `output: 'export'` generates exactly that. The development experience stays modern (App Router, TypeScript, Tailwind CSS 4), but the output is a plain directory of static files.
+
+```typescript
+// next.config.ts
+const nextConfig: NextConfig = {
+  output: "export",
+  trailingSlash: true,
+  images: { unoptimized: true },
+};
+```
+
+### Tailwind CSS 4 with CSS variables
+
+Tailwind 4 removes `tailwind.config.js` — theme tokens are defined directly in CSS using `@theme`. Dark mode is handled via a `.dark` class on `<html>`, toggled by a client component with `localStorage` persistence.
+
+This matters for professional sites: flash of unstyled content (FOUC) on dark mode is a visible quality signal. The anti-FOUC inline script in `<head>` runs before the first paint.
+
+### MDX for the blog
+
+Blog posts are `.mdx` files in `src/content/blog/`. Frontmatter carries metadata; the body is Markdown with optional React components. `next-mdx-remote/rsc` handles rendering as a React Server Component — no Turbopack serialization issues, plugins work normally.
+
+## What I deliberately skipped
+
+**Image optimization**: Next.js `<Image>` requires a server runtime for on-demand resizing. Static export means `unoptimized: true`. For a text-heavy professional site, this is the right tradeoff.
+
+**API routes**: No server, no API routes. The contact form is handled by `contact.php` — PHPMailer over HostGator's SMTP. A PHP file next to the static export covers the entire use case without a backend.
+
+**i18n**: English first. Spanish localization is planned for Phase 2, but launching in one language with good content beats launching in two languages with thin content.
+
+## What's next
+
+The blog is live. Next steps: SEO infrastructure (sitemap, Schema.org), OG images per page, and Lighthouse optimization targeting ≥ 90 across all categories. Then the first FTP deploy to production.
+
+Writing about the things you build is itself a form of engineering — it forces clarity, documents decisions for future you, and positions you in front of the people who search for the same problems.
