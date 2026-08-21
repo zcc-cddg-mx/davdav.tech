@@ -34,7 +34,7 @@ export default function Header() {
                   href={link.href}
                   className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                     pathname === link.href
-                      ? "text-[var(--color-primary)] bg-[var(--color-primary)]/10"
+                      ? "nav-active"
                       : "text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--card)]"
                   }`}
                 >

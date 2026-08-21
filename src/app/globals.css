@@ -35,6 +35,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── Nav active state ─────────────────────────────────────── */
+.nav-active {
+  color: var(--color-primary);
+  background-color: rgba(0, 120, 212, 0.10);
+}
+
 /* ── Blog prose styles ─────────────────────────────────────── */
 .prose-blog {
   color: var(--foreground);
