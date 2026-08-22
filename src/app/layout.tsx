@@ -122,6 +122,19 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* Google Analytics 4 — replace G-XXXXXXXXXX with real Measurement ID before deploy */}
+        <Script
+          id="ga4-init"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+        />
+        <Script
+          id="ga4-config"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX',{anonymize_ip:true})`,
+          }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

@@ -79,17 +79,16 @@ export default function HeroSection() {
           </div>
 
           {/* Right: hero portrait */}
-          <div className="hidden lg:flex justify-center lg:justify-end">
-            <div className="relative w-80 h-80 xl:w-96 xl:h-96">
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96">
               <Image
                 src="/brand/a01-hero.jpg"
                 alt="Carlos David Duarte — Senior Software Engineer"
                 fill
                 priority
-                sizes="(max-width: 1280px) 320px, 384px"
+                sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, (max-width: 1280px) 320px, 384px"
                 className="rounded-2xl object-cover object-center"
               />
-              {/* Subtle Azure Blue border accent */}
               <div className="absolute inset-0 rounded-2xl ring-1 ring-[var(--color-primary)] ring-opacity-30 pointer-events-none" />
             </div>
           </div>

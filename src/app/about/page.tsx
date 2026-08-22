@@ -139,13 +139,13 @@ export default function About() {
             </div>
 
             {/* Right: executive profile image (A07) */}
-            <div className="hidden lg:block">
-              <div className="relative w-full aspect-square max-w-md mx-auto">
+            <div className="block">
+              <div className="relative w-full aspect-square max-w-xs sm:max-w-sm lg:max-w-md mx-auto">
                 <Image
                   src="/brand/a07-executive-profile.jpg"
                   alt="Carlos David Duarte — Executive Profile"
                   fill
-                  sizes="(max-width: 1280px) 384px, 448px"
+                  sizes="(max-width: 640px) 320px, (max-width: 1024px) 384px, 448px"
                   className="rounded-2xl object-cover object-center"
                 />
                 <div className="absolute inset-0 rounded-2xl ring-1 ring-[var(--color-primary)] ring-opacity-30 pointer-events-none" />
