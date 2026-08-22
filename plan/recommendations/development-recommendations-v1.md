@@ -179,7 +179,7 @@ Avoid publishing only code snippets.
 
 Primary account:
 
-carlos@davdav.tech
+david.duarte@davdav.tech
 
 Suggested aliases:
 

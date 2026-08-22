@@ -3,6 +3,7 @@ import { Code2, Cloud, Layers, Users } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
+import { BreadcrumbJsonLd } from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = {
   title: "Expertise",
@@ -96,6 +97,12 @@ const LEVEL_STYLES: Record<string, string> = {
 export default function Expertise() {
   return (
     <>
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Expertise", path: "/expertise" },
+        ]}
+      />
       {/* ── Hero ── */}
       <section className="py-16 sm:py-20 border-b border-[var(--border)]">
         <Container>

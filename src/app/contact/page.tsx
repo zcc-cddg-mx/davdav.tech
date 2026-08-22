@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import ContactForm from "@/components/ui/ContactForm";
+import { BreadcrumbJsonLd } from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -70,6 +71,12 @@ const CONTACT_LINKS = [
 export default function Contact() {
   return (
     <>
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]}
+      />
       {/* ── Hero ── */}
       <section className="py-16 sm:py-20 border-b border-[var(--border)]">
         <Container>

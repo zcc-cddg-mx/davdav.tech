@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
+import { JsonLd, BreadcrumbJsonLd } from "@/components/ui/JsonLd";
 import { getAllPosts, getPostBySlug } from "@/lib/mdx";
 
 const CATEGORY_STYLES: Record<string, string> = {
@@ -60,6 +61,39 @@ export default async function BlogPost({
 
   return (
     <>
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${slug}` },
+        ]}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          dateModified: post.date,
+          author: {
+            "@type": "Person",
+            name: "Carlos David Duarte",
+            url: "https://davdav.tech",
+          },
+          publisher: {
+            "@type": "Person",
+            name: "Carlos David Duarte",
+            url: "https://davdav.tech",
+          },
+          url: `https://davdav.tech/blog/${slug}`,
+          image: "https://davdav.tech/brand/a04-thought-leadership.jpg",
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://davdav.tech/blog/${slug}`,
+          },
+        }}
+      />
       {/* ── Post header ── */}
       <section className="py-16 sm:py-20 border-b border-[var(--border)]">
         <Container>

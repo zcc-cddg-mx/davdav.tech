@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import { BreadcrumbJsonLd } from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = {
   title: "About",
@@ -91,6 +92,12 @@ const TIMELINE = [
 export default function About() {
   return (
     <>
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ]}
+      />
       {/* ── Hero ── */}
       <section className="py-16 sm:py-20 border-b border-[var(--border)]">
         <Container>

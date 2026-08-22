@@ -3,6 +3,7 @@ import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CertificationCard from "@/components/ui/CertificationCard";
 import Button from "@/components/ui/Button";
+import { BreadcrumbJsonLd } from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = {
   title: "Certifications",
@@ -138,6 +139,12 @@ const PLANNED = [
 export default function Certifications() {
   return (
     <>
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Certifications", path: "/certifications" },
+        ]}
+      />
       {/* ── Hero ── */}
       <section className="py-16 sm:py-20 border-b border-[var(--border)]">
         <Container>

@@ -4,6 +4,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import ExperienceCard from "@/components/ui/ExperienceCard";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
+import { BreadcrumbJsonLd } from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -148,6 +149,12 @@ const EARLIER = [
 export default function Experience() {
   return (
     <>
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Experience", path: "/experience" },
+        ]}
+      />
       {/* ── Hero ── */}
       <section className="py-16 sm:py-20 border-b border-[var(--border)]">
         <Container>

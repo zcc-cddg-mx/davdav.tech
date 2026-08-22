@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
 import BlogFilter from "@/components/sections/BlogFilter";
 import { getAllPosts } from "@/lib/mdx";
+import { BreadcrumbJsonLd } from "@/components/ui/JsonLd";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -15,6 +16,12 @@ export default function Blog() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]}
+      />
       <section className="py-16 sm:py-20 border-b border-[var(--border)]">
         <Container>
           <div className="max-w-3xl">
