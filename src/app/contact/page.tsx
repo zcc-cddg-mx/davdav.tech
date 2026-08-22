@@ -40,6 +40,31 @@ const CONTACT_LINKS = [
       </svg>
     ),
   },
+  {
+    label: "Location",
+    value: "Guadalajara Metropolitan Area, Mexico",
+    href: null,
+    icon: (
+      <svg
+        className="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={1.5}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+        />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+        />
+      </svg>
+    ),
+  },
 ];
 
 export default function Contact() {
@@ -83,31 +108,37 @@ export default function Contact() {
                 Direct contact
               </h2>
               <div className="space-y-4">
-                {CONTACT_LINKS.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={
-                      link.href.startsWith("http")
-                        ? "noopener noreferrer"
-                        : undefined
-                    }
-                    className="flex items-start gap-3 group rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 transition-colors hover:border-[var(--color-primary)]/50"
-                  >
-                    <span className="mt-0.5 text-[var(--muted)] group-hover:text-[var(--color-primary)] transition-colors flex-shrink-0">
-                      {link.icon}
-                    </span>
-                    <div>
-                      <p className="text-xs font-medium text-[var(--muted)] mb-0.5">
-                        {link.label}
-                      </p>
-                      <p className="text-sm text-[var(--foreground)] group-hover:text-[var(--color-primary)] transition-colors break-all">
-                        {link.value}
-                      </p>
-                    </div>
-                  </a>
-                ))}
+                {CONTACT_LINKS.map((link) => {
+                  const inner = (
+                    <>
+                      <span className="mt-0.5 text-[var(--muted)] group-hover:text-[var(--color-primary)] transition-colors flex-shrink-0">
+                        {link.icon}
+                      </span>
+                      <div>
+                        <p className="text-xs font-medium text-[var(--muted)] mb-0.5">
+                          {link.label}
+                        </p>
+                        <p className="text-sm text-[var(--foreground)] group-hover:text-[var(--color-primary)] transition-colors break-all">
+                          {link.value}
+                        </p>
+                      </div>
+                    </>
+                  );
+                  const cls = "flex items-start gap-3 group rounded-lg border border-[var(--border)] bg-[var(--card)] p-4 transition-colors hover:border-[var(--color-primary)]/50";
+                  return link.href ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className={cls}
+                    >
+                      {inner}
+                    </a>
+                  ) : (
+                    <div key={link.label} className={cls}>{inner}</div>
+                  );
+                })}
               </div>
 
               {/* Availability note */}

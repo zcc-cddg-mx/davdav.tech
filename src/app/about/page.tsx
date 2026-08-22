@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Target, Lightbulb, TrendingUp } from "lucide-react";
+import { Target, Lightbulb, TrendingUp, MapPin } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Badge from "@/components/ui/Badge";
@@ -100,9 +100,13 @@ export default function About() {
               <p className="text-sm font-medium text-[var(--color-primary)] tracking-wide uppercase mb-4">
                 About
               </p>
-              <h1 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] tracking-tight mb-3">
                 Engineering at the intersection of technology and business
               </h1>
+              <div className="flex items-center gap-1.5 text-sm text-[var(--muted)] mb-6">
+                <MapPin size={14} className="shrink-0" />
+                <span>Guadalajara Metropolitan Area, Mexico</span>
+              </div>
               <div className="space-y-4 text-base text-[var(--muted)] leading-relaxed">
                 <p>
                   I&apos;m a Senior Software Engineer and Technical Lead focused on
