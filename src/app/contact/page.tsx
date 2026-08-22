@@ -44,7 +44,7 @@ const CONTACT_LINKS = [
   {
     label: "Location",
     value: "Guadalajara, México",
-    href: null,
+    href: "https://maps.app.goo.gl/FwfpN9LZPx1Zn8ZX7",
     icon: (
       <svg
         className="w-5 h-5"
