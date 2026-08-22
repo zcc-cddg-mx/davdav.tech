@@ -199,9 +199,10 @@ Tasks 11.4–11.8 son Phase 2 scope (blog headers, articles, events, advisory).
 | 12.3 | ✅ QA visual — consola errores | Fix React script tag warning (next/script), hydration mismatch DarkModeToggle, RSC prefetch 404 en PDF (Button external → `<a>` nativo). |
 | 12.4 | ✅ QA visual — blog, contact, expertise | Todos los ítems verificados en código. Blog listing + filtro, post individual con avatar de autor, contact form + availability badge. |
 | 12.5 | ⏳ Cross-browser testing | Chrome, Firefox, Safari, Edge — manual |
-| 12.6 | ⏳ Mobile QA + imágenes mobile | iOS Safari, Android Chrome. Imágenes Hero/About actualmente `hidden lg:block` — pendiente decisión para mobile. |
+| 12.6 | ✅ Mobile QA + imágenes mobile | Hero (A01) y About (A07) visibles en mobile. Tamaños responsivos actualizados. |
 | 12.7 | ⏳ Auditoría Lighthouse | Performance, Accessibility, Best Practices, SEO ≥ 90 |
 | 12.8 | ⏳ Verificación envío email PHP | Requiere deploy en HostGator (Phase 13) |
+| 12.9 | ✅ Contact — Google Maps link | Location card vinculada a maps.app.goo.gl/FwfpN9LZPx1Zn8ZX7 |
 
 ---
 
@@ -223,117 +224,83 @@ Tasks 11.4–11.8 son Phase 2 scope (blog headers, articles, events, advisory).
 ## Recomendaciones — Acciones Pendientes
 
 Derivadas del análisis de `plan/recommendations/development-recommendations-v1.md`.  
-Clasificadas por prioridad y fase de ejecución.
+Última actualización: 2026-08-22.
+
+| ID | Tarea | Prioridad | Estado |
+|---|---|---|---|
+| R1 | Security headers `.htaccess` | 🔴 Alta | ✅ Implementado |
+| R2 | Google Analytics 4 | 🔴 Alta | ✅ Implementado — ⚠️ placeholder pendiente |
+| R3 | Article + BreadcrumbList JSON-LD | 🟡 Media | ✅ Implementado |
+| R4 | CAPTCHA / spam protection | 🟡 Media | ✅ Resuelto — honeypot suficiente |
+| R5 | Imágenes mobile Hero + About | 🟡 Media | ✅ Implementado |
+| R6 | Email canónico en doc de recomendaciones | 🟢 Baja | ✅ Corregido |
+| R7 | Content strategy post-deploy | 🟢 Baja | ⏳ Operacional — post-deploy |
 
 ---
 
-### R1 — Security Headers (Phase 13, antes del deploy) 🔴 Alta prioridad
+### R1 — Security Headers ✅
 
-Añadir security headers vía `.htaccess` en HostGator. Impacta directamente el score de **Lighthouse Best Practices** (Phase 12.7).
+`public/.htaccess` creado con `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-XSS-Protection`. Incluye HTTPS redirect, gzip compression y browser caching para assets estáticos.
 
-Headers requeridos:
-```apache
-# .htaccess — security headers
-Header always set X-Frame-Options "SAMEORIGIN"
-Header always set X-Content-Type-Options "nosniff"
-Header always set Referrer-Policy "strict-origin-when-cross-origin"
-Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-Header always set X-XSS-Protection "1; mode=block"
-```
-
-| Tarea | Fase |
-|---|---|
-| Crear/actualizar `.htaccess` con security headers | Phase 13, antes de 13.5 |
-| Verificar headers en producción (`curl -I https://davdav.tech`) | Phase 13.6 |
+> Pendiente en producción: verificar headers con `curl -I https://davdav.tech` (Phase 13.6). Requiere SSL activo en HostGator.
 
 ---
 
-### R2 — Analytics (Phase 13, post-deploy) 🔴 Alta prioridad
+### R2 — Google Analytics 4 ✅ ⚠️
 
-Sin tracking implementado no se pueden medir los "Success Indicators" del documento de recomendaciones (recruiter outreach, visibilidad, etc.).
+Script integrado en `src/app/layout.tsx` vía `next/script strategy="afterInteractive"`. `anonymize_ip: true` habilitado.
 
-Opciones recomendadas:
-- **Plausible Analytics** — privacy-first, sin cookies, GDPR-compliant, ligero (~1 KB). Recomendado para el perfil del sitio.
-- **Google Analytics 4** — mayor ecosistema pero requiere banner de cookies.
-
-| Tarea | Fase |
-|---|---|
-| Decidir herramienta de analytics (Plausible vs GA4) | Phase 13 |
-| Integrar script en `layout.tsx` vía `next/script strategy="afterInteractive"` | Phase 13 |
-| Verificar eventos en producción | Phase 13.6 |
+> **⚠️ Acción requerida antes del deploy:** reemplazar `G-XXXXXXXXXX` (2 ocurrencias en `layout.tsx`) con el Measurement ID real — Google Analytics → Admin → Data Streams → Measurement ID.
 
 ---
 
-### R3 — Article + BreadcrumbList Schema (Phase 13) 🟡 Media prioridad
+### R3 — JSON-LD Schemas ✅
 
-El `Person` schema está implementado en el layout raíz. Faltan dos schemas que impactan el SEO de los artículos de blog:
-
-- `Article` schema en `src/app/blog/[slug]/page.tsx` — mejora rich snippets en Google
-- `BreadcrumbList` schema en páginas interiores — mejora navegación en SERP
-
-| Tarea | Fase |
-|---|---|
-| Añadir `Article` JSON-LD en `blog/[slug]/page.tsx` (author, datePublished, headline) | Phase 13 |
-| Añadir `BreadcrumbList` JSON-LD en páginas de segundo nivel | Phase 13 |
+- `src/components/ui/JsonLd.tsx` — componentes `JsonLd` y `BreadcrumbJsonLd`
+- `BreadcrumbList` añadido en las 8 páginas interiores (About, Experience, Education, Certifications, Expertise, Blog, Blog/[slug], Contact)
+- `TechArticle` schema añadido en `blog/[slug]/page.tsx` (headline, datePublished, author, publisher, image, mainEntityOfPage)
 
 ---
 
-### R4 — CAPTCHA / Contact Form Spam Protection 🟡 Media prioridad
+### R4 — Spam Protection ✅
 
-El documento recomienda CAPTCHA. El form actual tiene honeypot (implementado). Decisión requerida:
-
-- **Opción A:** Mantener solo honeypot — suficiente para un sitio personal de bajo tráfico. Simpler, no afecta UX.
-- **Opción B:** Añadir Cloudflare Turnstile (invisible, sin fricción) o hCaptcha — más robusto para cuando el sitio tenga visibilidad.
-
-> **Decisión pendiente:** confirmar si honeypot es suficiente para Phase 1 o se requiere implementar Turnstile antes del deploy.
-
-| Tarea | Fase |
-|---|---|
-| Decidir: honeypot suficiente vs CAPTCHA requerido | Phase 13 |
-| Si CAPTCHA: integrar Cloudflare Turnstile en `ContactForm` + `contact.php` | Phase 13 |
+Decisión: **honeypot suficiente** para Phase 1. El `ContactForm` ya tiene campo honeypot implementado. Cloudflare Turnstile queda en backlog para Phase 2 si el tráfico lo justifica.
 
 ---
 
-### R5 — Mobile Images — Decisión Pendiente 🟡 Media prioridad
+### R5 — Mobile Images ✅
 
-Las imágenes de marca en Hero (`a01-hero.jpg`) y About (`a07-executive-profile.jpg`) son actualmente `hidden lg:block`. Impacta Phase 12.6.
-
-Opciones:
-- **Opción A:** Mostrar imagen en mobile con aspect ratio reducido (`aspect-[4/3]` o `aspect-square`, max-h limitado)
-- **Opción B:** Mantener `hidden lg:block` — layout de una columna limpio en mobile sin imagen
-
-> **Decisión pendiente:** definir si las imágenes se muestran en mobile antes de cerrar Phase 12.6.
+- `HeroSection.tsx` — `hidden lg:flex` → `flex`. Tamaños: 224px (mobile) → 256px (sm) → 320px (lg) → 384px (xl)
+- `about/page.tsx` — `hidden lg:block` → `block`. `max-w-xs` (mobile) → `max-w-sm` (sm) → `max-w-md` (lg)
+- `sizes` actualizados en ambas imágenes para carga responsiva correcta
+- Cierra Phase 12.6 ✅
 
 ---
 
-### R6 — Email Canónico en Documento de Recomendaciones 🟢 Baja prioridad
+### R6 — Email Canónico ✅
 
-El archivo `plan/recommendations/development-recommendations-v1.md` lista `carlos@davdav.tech` como email primario. El email canónico del proyecto es `david.duarte@davdav.tech`.
-
-| Tarea | Fase |
-|---|---|
-| Corregir email en `development-recommendations-v1.md` | Backlog |
+`plan/recommendations/development-recommendations-v1.md`: `carlos@davdav.tech` → `david.duarte@davdav.tech`.
 
 ---
 
-### R7 — Content Strategy (post-deploy, operacional) 🟢 Baja prioridad
+### R7 — Content Strategy ⏳ Post-deploy
 
-Objetivos del documento de recomendaciones para el primer año:
+Objetivos año 1:
 
 | Métrica | Target |
 |---|---|
 | Artículos de blog | 10+ en 12 meses |
-| Publicación LinkedIn | 1 post/semana |
+| Posts LinkedIn | 1/semana |
 | Artículos de arquitectura | 1/mes |
 
-Temas priorizados para los primeros 5 artículos (del documento, validados contra el perfil):
+Primeros 5 temas priorizados (validados contra perfil real):
 1. My Journey from Software Engineer to Technical Lead
 2. Modernizing Enterprise Applications with Java and Spring Boot
 3. Azure DevOps Best Practices for Enterprise Teams
 4. Reducing Technical Debt Without Stopping Delivery
 5. Why Solution Architecture Is More About Business Than Technology
 
-> El content flywheel (davdav.tech → LinkedIn → newsletter) requiere newsletter (Phase 2). Para Phase 1: publicar en davdav.tech + compartir en LinkedIn es suficiente.
+> Content flywheel completo (davdav.tech → LinkedIn → newsletter) requiere newsletter de Phase 2. Para Phase 1: publicar en davdav.tech + compartir en LinkedIn.
 
 ---
 
