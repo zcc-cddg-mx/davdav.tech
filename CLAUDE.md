@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **davdav.tech** is the personal professional platform for Carlos David Duarte. The goal is not a simple portfolio — it is a long-term professional brand ecosystem positioning him as a Senior Software Engineer, Technical Lead, and emerging Solution Architect.
 
-Full requirements are documented in `plan/website-development-contract.md` and the strategic vision in `plan/website-architecture-masterplan.md`. Brand identity and photography requirements are in `plan/personal-brand-contract.md`. Read all three before making architectural or content decisions.
+Full requirements are documented in `plan/contracts/website-development-contract.md` and the strategic vision in `plan/strategy/architecture-masterplan-v2.md`. Brand identity and photography requirements are in `plan/contracts/personal-brand-contract-v2.md`. Read all three before making architectural or content decisions. See `plan/README.md` for the full directory index.
 
 ## Tech Stack
 
@@ -108,10 +108,20 @@ scripts/
   dev.sh                      # dev server script (handles nvm use 24 + npm run dev)
 contact.php                   # PHP mailer — deploy to server root alongside /out + vendor/
 plan/
-  development-plan.md         # 13-phase plan (v1.2)
-  website-development-contract.md
-  website-architecture-masterplan.md
-  personal-brand-contract.md  # Brand identity, photography requirements, email standards
+  README.md                   # Directory index
+  strategy/
+    digital-brand-blueprint-v1.1.md      # Consolidated strategic blueprint
+    architecture-masterplan-v2.md        # Current masterplan ★
+    architecture-masterplan-v1.md        # Original (superseded)
+  contracts/
+    website-development-contract.md      # SRS — requirements, scope, deliverables
+    personal-brand-contract-v2.md        # Brand identity, photography, email ★
+    personal-brand-contract-v1.md        # Original (superseded)
+  recommendations/
+    development-recommendations-v1.md    # Strategic & technical recommendations
+  execution/
+    development-plan.md                  # 13-phase plan (v1.2) — active
+    progress-report-2026-08-22.md        # Pre-production status report
 ```
 
 ## Site Architecture
@@ -124,7 +134,7 @@ Home → About → Experience → Education → Certifications → Expertise →
 
 Resume is a PDF download (`/cv/cv-carlos-duarte.pdf`), not a separate page.
 
-Requirements per page: `plan/website-development-contract.md` §5–6.
+Requirements per page: `plan/contracts/website-development-contract.md` §5–6.
 
 **Blog** is the primary growth engine — MDX files in `src/content/blog/`, categories: Java, Azure, DevOps, Technical Leadership, Solution Architecture.
 
@@ -179,7 +189,7 @@ Phases 0–10 ✅ complete. Phase 11 in progress:
 
 Brand images: `public/brand/a01-hero.jpg` through `a07-executive-profile.jpg`. Source originals in `img/brand/` (do not serve directly).
 
-See `plan/development-plan.md` for full task breakdown.
+See `plan/execution/development-plan.md` for full task breakdown.
 
 ## Future Scope — Phase 2+ (do not build now)
 
