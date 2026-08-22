@@ -105,7 +105,7 @@ export default function About() {
               </h1>
               <div className="flex items-center gap-1.5 text-sm text-[var(--muted)] mb-6">
                 <MapPin size={14} className="shrink-0" />
-                <span>Guadalajara, Mexico</span>
+                <span>Guadalajara, México</span>
               </div>
               <div className="space-y-4 text-base text-[var(--muted)] leading-relaxed">
                 <p>
