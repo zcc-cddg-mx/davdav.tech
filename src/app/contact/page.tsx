@@ -42,7 +42,7 @@ const CONTACT_LINKS = [
   },
   {
     label: "Location",
-    value: "Guadalajara Metropolitan Area, Mexico",
+    value: "Guadalajara, Mexico",
     href: null,
     icon: (
       <svg
