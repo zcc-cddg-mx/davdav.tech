@@ -220,6 +220,123 @@ Tasks 11.4–11.8 son Phase 2 scope (blog headers, articles, events, advisory).
 
 ---
 
+## Recomendaciones — Acciones Pendientes
+
+Derivadas del análisis de `plan/recommendations/development-recommendations-v1.md`.  
+Clasificadas por prioridad y fase de ejecución.
+
+---
+
+### R1 — Security Headers (Phase 13, antes del deploy) 🔴 Alta prioridad
+
+Añadir security headers vía `.htaccess` en HostGator. Impacta directamente el score de **Lighthouse Best Practices** (Phase 12.7).
+
+Headers requeridos:
+```apache
+# .htaccess — security headers
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+Header always set X-XSS-Protection "1; mode=block"
+```
+
+| Tarea | Fase |
+|---|---|
+| Crear/actualizar `.htaccess` con security headers | Phase 13, antes de 13.5 |
+| Verificar headers en producción (`curl -I https://davdav.tech`) | Phase 13.6 |
+
+---
+
+### R2 — Analytics (Phase 13, post-deploy) 🔴 Alta prioridad
+
+Sin tracking implementado no se pueden medir los "Success Indicators" del documento de recomendaciones (recruiter outreach, visibilidad, etc.).
+
+Opciones recomendadas:
+- **Plausible Analytics** — privacy-first, sin cookies, GDPR-compliant, ligero (~1 KB). Recomendado para el perfil del sitio.
+- **Google Analytics 4** — mayor ecosistema pero requiere banner de cookies.
+
+| Tarea | Fase |
+|---|---|
+| Decidir herramienta de analytics (Plausible vs GA4) | Phase 13 |
+| Integrar script en `layout.tsx` vía `next/script strategy="afterInteractive"` | Phase 13 |
+| Verificar eventos en producción | Phase 13.6 |
+
+---
+
+### R3 — Article + BreadcrumbList Schema (Phase 13) 🟡 Media prioridad
+
+El `Person` schema está implementado en el layout raíz. Faltan dos schemas que impactan el SEO de los artículos de blog:
+
+- `Article` schema en `src/app/blog/[slug]/page.tsx` — mejora rich snippets en Google
+- `BreadcrumbList` schema en páginas interiores — mejora navegación en SERP
+
+| Tarea | Fase |
+|---|---|
+| Añadir `Article` JSON-LD en `blog/[slug]/page.tsx` (author, datePublished, headline) | Phase 13 |
+| Añadir `BreadcrumbList` JSON-LD en páginas de segundo nivel | Phase 13 |
+
+---
+
+### R4 — CAPTCHA / Contact Form Spam Protection 🟡 Media prioridad
+
+El documento recomienda CAPTCHA. El form actual tiene honeypot (implementado). Decisión requerida:
+
+- **Opción A:** Mantener solo honeypot — suficiente para un sitio personal de bajo tráfico. Simpler, no afecta UX.
+- **Opción B:** Añadir Cloudflare Turnstile (invisible, sin fricción) o hCaptcha — más robusto para cuando el sitio tenga visibilidad.
+
+> **Decisión pendiente:** confirmar si honeypot es suficiente para Phase 1 o se requiere implementar Turnstile antes del deploy.
+
+| Tarea | Fase |
+|---|---|
+| Decidir: honeypot suficiente vs CAPTCHA requerido | Phase 13 |
+| Si CAPTCHA: integrar Cloudflare Turnstile en `ContactForm` + `contact.php` | Phase 13 |
+
+---
+
+### R5 — Mobile Images — Decisión Pendiente 🟡 Media prioridad
+
+Las imágenes de marca en Hero (`a01-hero.jpg`) y About (`a07-executive-profile.jpg`) son actualmente `hidden lg:block`. Impacta Phase 12.6.
+
+Opciones:
+- **Opción A:** Mostrar imagen en mobile con aspect ratio reducido (`aspect-[4/3]` o `aspect-square`, max-h limitado)
+- **Opción B:** Mantener `hidden lg:block` — layout de una columna limpio en mobile sin imagen
+
+> **Decisión pendiente:** definir si las imágenes se muestran en mobile antes de cerrar Phase 12.6.
+
+---
+
+### R6 — Email Canónico en Documento de Recomendaciones 🟢 Baja prioridad
+
+El archivo `plan/recommendations/development-recommendations-v1.md` lista `carlos@davdav.tech` como email primario. El email canónico del proyecto es `david.duarte@davdav.tech`.
+
+| Tarea | Fase |
+|---|---|
+| Corregir email en `development-recommendations-v1.md` | Backlog |
+
+---
+
+### R7 — Content Strategy (post-deploy, operacional) 🟢 Baja prioridad
+
+Objetivos del documento de recomendaciones para el primer año:
+
+| Métrica | Target |
+|---|---|
+| Artículos de blog | 10+ en 12 meses |
+| Publicación LinkedIn | 1 post/semana |
+| Artículos de arquitectura | 1/mes |
+
+Temas priorizados para los primeros 5 artículos (del documento, validados contra el perfil):
+1. My Journey from Software Engineer to Technical Lead
+2. Modernizing Enterprise Applications with Java and Spring Boot
+3. Azure DevOps Best Practices for Enterprise Teams
+4. Reducing Technical Debt Without Stopping Delivery
+5. Why Solution Architecture Is More About Business Than Technology
+
+> El content flywheel (davdav.tech → LinkedIn → newsletter) requiere newsletter (Phase 2). Para Phase 1: publicar en davdav.tech + compartir en LinkedIn es suficiente.
+
+---
+
 ## Shared Components (transversales)
 
 Componentes reutilizables a construir durante las fases:
