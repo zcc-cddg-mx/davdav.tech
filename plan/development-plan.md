@@ -87,10 +87,11 @@
 | # | Task | Notes |
 |---|---|---|
 | 5.1 | `EducationCard` component | Institución, título, período |
-| 5.2 | Master's — IT Management | Universidad Tecmilenio, Sep 2024 – Mar 2026 |
-| 5.3 | Master's — DevOps | UNIR México, Jun 2024 – Mar 2026 |
+| 5.2 | Master's — IT Management | Universidad Tecmilenio, Sep 2024 – Mar 2026 (**completed**, degree in processing) |
+| 5.3 | Master's — DevOps | UNIR México, Jun 2024 – Mar 2026 (**completed**, degree in processing) |
 | 5.4 | Bachelor of Engineering | Universidad Autónoma de Chihuahua, 2010 – 2014 |
-| 5.5 | Otros estudios | English Program (Linguatec), Diploma (Sec. Educación Chihuahua) |
+| 5.5 | Engineer's Degree | Instituto Tecnológico de Chihuahua II, Systems Engineering, 2008–2010 |
+| 5.6 | Complementary studies | CBTis 122 (Técnico Sistemas, 2004–2007), UACH English Diploma (2013–2014), Linguatec (2024–2025), SECyD Diploma (2015) |
 
 ---
 
@@ -100,9 +101,9 @@
 
 | # | Task | Notes |
 |---|---|---|
-| 6.1 | `CertificationCard` component | Nombre, emisor, fecha |
-| 6.2 | Listado actual | IBM Cloud Essentials, Machine Learning, Enterprise Data Science, Voxy, Getting Started with Data |
-| 6.3 | Estructura para futuras | Sección preparada para Azure, Java y otras certificaciones en progreso |
+| 6.1 | `CertificationCard` component | Nombre, emisor, fecha, `credentialUrl` → link "Verify →" |
+| 6.2 | Listado completo | 13 certificaciones con URLs públicas (Credly, LinkedIn Learning, UNIR Verifirma, CognitiveClass, Voxy). Categorías: Cloud, DevOps, Data & AI, Security, AI, Language |
+| 6.3 | Roadmap | AZ-900, AZ-204, AZ-305, Oracle Java OCP |
 
 ---
 
@@ -178,7 +179,7 @@ Tasks 11.4–11.8 son Phase 2 scope (blog headers, articles, events, advisory).
 |---|---|---|---|
 | 11.1 | ✅ Copiar imágenes a `public/brand/` | A01–A07 + profile-square | `public/brand/a01-hero.jpg` … `a07-executive-profile.jpg` |
 | 11.2 | ✅ Hero section — A01 | `public/brand/a01-hero.jpg` | 2-col layout, imagen a la derecha (desktop) |
-| 11.3 | ✅ About page — A03 | `public/brand/a03-technical-leadership.jpg` | 2-col layout, imagen a la derecha (desktop) |
+| 11.3 | ✅ About page — A07 | `public/brand/a07-executive-profile.jpg` | 2-col layout, imagen a la derecha (desktop). A03 descartada (aspecto IA demasiado visible) |
 | 11.4 | Blog headers — A04 | `public/brand/a04-thought-leadership.jpg` | Phase 2 — blog header image |
 | 11.5 | Engineering articles — A05 | `public/brand/a05-engineering-workspace.jpg` | Phase 2 — Java/engineering articles |
 | 11.6 | Conference / Speaker — A06 | `public/brand/a06-conference-speaker.jpg` | Phase 2 — events section |
@@ -193,11 +194,14 @@ Tasks 11.4–11.8 son Phase 2 scope (blog headers, articles, events, advisory).
 
 | # | Task | Notes |
 |---|---|---|
-| 12.1 | ✅ Revisión CV/LinkedIn vs sitio | Certifications: 5→13 certs, fechas corregidas, categorías AI/DevOps/Security añadidas. Expertise: Docker+Kubernetes añadidos. CV actualizado con 13 certs por año. Sierra Metals Inc. = "Alpayana" en LinkedIn — conservar nombre CV. |
-| 12.2 | Cross-browser testing | Chrome, Firefox, Safari, Edge |
-| 12.3 | Mobile QA | iOS Safari, Android Chrome |
-| 12.4 | Auditoría Lighthouse | Performance, Accessibility, Best Practices, SEO ≥ 90 |
-| 12.5 | Loading states | Skeleton screens donde aplique |
+| 12.1 | ✅ Revisión CV/LinkedIn vs sitio | Certifications: 5→13, fechas corregidas, URLs públicas añadidas. Expertise: Docker+Kubernetes. CV actualizado. Education: ITC II, CBTis 122, UACH English Diploma añadidos desde LinkedIn. Zurich: Remote·Mexico. |
+| 12.2 | ✅ QA visual — navegación | Nav active state con `.nav-active` (rgba), trailing slash normalizado, child routes con startsWith. DarkModeToggle cursor-pointer. |
+| 12.3 | ✅ QA visual — consola errores | Fix React script tag warning (next/script), hydration mismatch DarkModeToggle, RSC prefetch 404 en PDF (Button external → `<a>` nativo). |
+| 12.4 | ✅ QA visual — blog, contact, expertise | Todos los ítems verificados en código. Blog listing + filtro, post individual con avatar de autor, contact form + availability badge. |
+| 12.5 | ⏳ Cross-browser testing | Chrome, Firefox, Safari, Edge — manual |
+| 12.6 | ⏳ Mobile QA + imágenes mobile | iOS Safari, Android Chrome. Imágenes Hero/About actualmente `hidden lg:block` — pendiente decisión para mobile. |
+| 12.7 | ⏳ Auditoría Lighthouse | Performance, Accessibility, Best Practices, SEO ≥ 90 |
+| 12.8 | ⏳ Verificación envío email PHP | Requiere deploy en HostGator (Phase 13) |
 
 ---
 
