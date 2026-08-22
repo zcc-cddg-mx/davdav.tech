@@ -120,9 +120,9 @@ Extraído de LinkedIn · perfil: dav-gill · última actualización: agosto 2026
 
 | Aptitud | Evidencia principal |
 |---|---|
-| Team Leadership | Engineering Team Lead en Alpayana + UACH |
-| Teamwork | Engineering Team Lead en Alpayana + UACH |
-| Team Motivation | Engineering Team Lead en Alpayana |
+| Team Leadership | Engineering Team Lead en Sierra Metals + UACH |
+| Teamwork | Engineering Team Lead en Sierra Metals + UACH |
+| Team Motivation | Engineering Team Lead en Sierra Metals |
 | Leadership | Entrepreneur en emprendimientos propios + UACH |
 | Project Management | Entrepreneur en emprendimientos propios |
 | Time Management | Entrepreneur en emprendimientos propios |
